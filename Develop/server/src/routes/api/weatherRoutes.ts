@@ -1,19 +1,44 @@
-import { Router, type Request, type Response } from 'express';
+import { Router, type Request, type Response } from "express";
 const router = Router();
 
-// import HistoryService from '../../service/historyService.js';
-// import WeatherService from '../../service/weatherService.js';
+import HistoryService from "../../service/historyService.js";
+import WeatherService from "../../service/weatherService.js";
 
 // TODO: POST Request with city name to retrieve weather data
-router.post('/', (req: Request, res: Response) => {
-  // TODO: GET weather data from city name
-  // TODO: save city to search history
+router.post("/", (req: Request, res: Response) => {
+  try {
+    // TODO: GET weather data from city name
+    const cityName = req.body.cityName;
+    console.log("Here is my city name", cityName);
+    WeatherService.getWeatherForCity(cityName).then((data) => {
+      HistoryService.addCity(cityName);
+
+      res.json(data);
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Unable to fetch weather data" });
+  }
 });
 
 // TODO: GET search history
-router.get('/history', async (req: Request, res: Response) => {});
+router.get("/history", async (_req: Request, res: Response) => {
+  try {
+    const history = await HistoryService.getCities();
+    res.status(200).json(history);
+  } catch (error) {
+    res.status(500).json({ message: "Unable to fetch city history", error });
+  }
+});
 
 // * BONUS TODO: DELETE city from search history
-router.delete('/history/:id', async (req: Request, res: Response) => {});
+router.delete("/history/:id", async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    await HistoryService.removeCity(id);
+    res.status(200).json({ message: `City ID ${id} removed from history` });
+  } catch (error) {
+    res.status(500).json({ message: "Unable to remove city ID", error });
+  }
+});
 
 export default router;
