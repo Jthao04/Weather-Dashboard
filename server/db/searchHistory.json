@@ -82,5 +82,17 @@
 	{
 		"name": "Los Angeles",
 		"id": "0a11d45a-a358-4917-9e67-807eda824fba"
+	},
+	{
+		"name": "San Diego",
+		"id": "f0b3d89b-be69-4a4e-84b0-e9852e5b929f"
+	},
+	{
+		"name": "San Diego",
+		"id": "5e3582c7-91a3-4910-96d3-5bbdef223b00"
+	},
+	{
+		"name": "Minnetonka",
+		"id": "d4e4f590-9040-4728-9b30-00e6420a8def"
 	}
 ]
