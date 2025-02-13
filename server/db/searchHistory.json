@@ -6,5 +6,29 @@
 	{
 		"name": "San Diego",
 		"id": "507c44da-072e-441b-a4be-db73145aebe7"
+	},
+	{
+		"name": "San Diego",
+		"id": "38aa709c-d1c1-4ef8-8c18-e592760e506f"
+	},
+	{
+		"name": "Minnetonka",
+		"id": "6533dbaa-5069-460f-966e-276836912760"
+	},
+	{
+		"name": "San Diego",
+		"id": "6ad81479-47da-48e4-af02-8dd6b537e314"
+	},
+	{
+		"name": "Minnetonka",
+		"id": "9e393759-0d39-4ca3-953a-241e85182ee3"
+	},
+	{
+		"name": "Big Lake",
+		"id": "c17e81a6-1dcd-4ac1-baae-112c83d6b578"
+	},
+	{
+		"name": "Los Angeles",
+		"id": "0be3b151-66bc-413a-941c-87ea56103221"
 	}
 ]
