@@ -121,7 +121,7 @@ class WeatherService {
 
   // TODO: Build parseCurrentWeather method
   private parseCurrentWeather(response: any) {
-    const parsedDate = dayjs.utc(response.dt_txt).format();
+    const parsedDate = dayjs.utc(response.dt_txt).format('MM/DD/YYYY');
     return new Weather(
       this.city,
       parsedDate || "Today",
@@ -132,6 +132,7 @@ class WeatherService {
       Math.round(response.main.humidity) || 0
     );
   }
+
   // TODO: Complete buildForecastArray method
   private buildForecastArray(currentWeather: Weather, weatherData: any[]) {
     if (!Array.isArray(weatherData)) {
